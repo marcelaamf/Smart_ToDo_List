@@ -10,6 +10,19 @@ const router  = express.Router();
 const db = require('../db/connection');
 
 router.get('/', (req, res) => {
+const data = [
+  {id: 1, item: 'Pizza Place' },
+  {id: 2, item: 'Pizza Place' },
+  {id: 3, item: 'Pizza Place' },
+  {id: 4, item: 'Pizza Place' },
+
+]
+
+return res.json(data);
+
+
+
+
   const query = `SELECT * FROM widgets`;
   console.log(query);
   db.query(query)
