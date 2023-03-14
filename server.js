@@ -7,6 +7,9 @@ const express = require('express');
 const morgan = require('morgan');
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
+const db = require('./db/connection.js');
+
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -50,7 +53,7 @@ app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
 // Note: mount other resources here, using the same pattern above
 
-app.use('/mainpage', mainRoutes);
+//app.use('/mainpage', mainRoutes);
 
 // Home page
 // Warning: avoid creating more routes in this file!
@@ -73,7 +76,13 @@ app.post("/logout", (req, res) => {
   res.redirect("/");
 });
 
+/*// /user/endpoints
+const mainRouter = express.Router();
+mainRoutes(mainRouter, db);*/
+app.use('/mainpage', mainRoutes(db));
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
