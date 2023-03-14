@@ -14,12 +14,16 @@
   <link rel="stylesheet" href="/styles/layout.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/users.js"></script>
+  <script defer src="/scripts/app.js"></script>
 </head>
 
 <body>
   <h1>Users</h1>
-  <button id="fetch-users">BLA BLA BLA AJAX</button>
+  <div><form method="POST" action="/toeat">
+    <label>Type Your Item</label>
+    <input id="id" name="item" type="text">
+  <button type="submit" id="fetch-users">Let's make a list</button>
+  </form></div>
   <ul id="users"></ul>
 </body>
 

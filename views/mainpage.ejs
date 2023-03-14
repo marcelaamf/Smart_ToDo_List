@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>To eat!!!</title>
+  <title>Main Page</title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -13,13 +13,25 @@
   <link rel="stylesheet" href="/styles/main.css" />
   <link rel="stylesheet" href="/styles/layout.css" />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/users.js"></script>
+  <script defer src="/scripts/app.js"></script>
 </head>
 
 <body>
+
   <h1>To Eat</h1>
-  <button id="fetch-users">Let's eat</button>
+  <div>
+    <form class="to-eat-form" method="POST" action="/toeat">
+      <label>Type Your Item</label>
+      <input id="id" name="toDoItem" type="text">
+      <button type="submit" id="fetch-users">Let's eat</button>
+    </form>
+  </div>
+  <article class="new-items">
+  </article>
   <ul id="users"></ul>
 </body>
 
