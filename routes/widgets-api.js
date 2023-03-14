@@ -21,8 +21,6 @@ const data = [
 return res.json(data);
 
 
-
-
   const query = `SELECT * FROM widgets`;
   console.log(query);
   db.query(query)
