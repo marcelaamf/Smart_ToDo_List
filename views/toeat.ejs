@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>To eat!!!</title>
 
   <meta charset="UTF-8" >
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
@@ -14,24 +14,13 @@
   <link rel="stylesheet" href="/styles/layout.css" />
 
   <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
+  <script defer src="/scripts/users.js"></script>
 </head>
 
 <body>
-
-  <h1>Have fun! 🥔</h1>
-  <script>
-    if ('geolocation' in navigator) {
-      console.log('geolocation available');
-      navigator.geolocation.getCurrentPosition(position => {
-        console.log(position);
-      });
-    } else {
-      console.log('geolocation not available');
-    }
-  </script>
-
-
+  <h1>To Eat</h1>
+  <button id="fetch-users">Let's eat</button>
+  <ul id="users"></ul>
 </body>
 
 </html>
