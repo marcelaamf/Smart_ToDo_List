@@ -8,8 +8,7 @@ const getCategories = function (id) {
   GROUP BY users.id, to_do_lists.id, categories.id;
   `, [1])
     .then((result) => {
-      console.log(result.rows);
-      if (result.row) {
+      if (result.rows) {
         return result.rows;
       } else {
         return null;
