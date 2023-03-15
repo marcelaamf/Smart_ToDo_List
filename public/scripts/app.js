@@ -30,7 +30,7 @@ $(document).ready(function () {
     // console.log('food', event.target.toDoItem.value)
     $.ajax({
       method: 'POST',
-      url: '/',
+      url: '/mainpage',
       data: $(this).serialize(),
       success: function (data) {
         $('.new-items').prepend(createItem(event.target.toDoItem.value));      },
