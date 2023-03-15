@@ -8,10 +8,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" />
-  <link rel="stylesheet" href="/styles/main.css" />
-  <link rel="stylesheet" href="/styles/layout.css" />
+  <!-- Header CSS -->
+  <link rel="stylesheet" href="/header.css" type="text/css" />
+  <!-- Navbar CSS -->
+  <link rel="stylesheet" href="/navbar.css" type="text/css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
@@ -21,36 +21,135 @@
 </head>
 
 <body>
+  <div class="main">
+  <!-- Side navigation -->
+<div class="sidenav">
+  <img class="logo" src="smarttodologo.png">
+  <a class="eat" href="#">To Eat</a>
+  <a class="watch" href="#">To Watch</a>
+  <a class="buy" href="#">To Buy</a>
+  <a class="read" href="#">To Read</a>
+</div>
+
+<!-- Page content -->
 
 
-  <h1>To Eat</h1>
-  <div>
-    <form class="to-eat-form" method="POST" action="/toeat">
-      <label>Type Your Item</label>
-      <input id="id" name="toDoItem" type="text">
-      <button type="submit" id="fetch-users">Let's eat</button>
-    </form>
+
+
+  <div id="myDIV" class="header">
+    <h2 style="margin:5px">My To Do List</h2>
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
   </div>
-  <article class="new-items">
-  </article>
-  <ul id="users"></ul>
-  <% for (let category of categories) { %>
-    <p><%= category.title %> </p>
-  <% } %>
+<section class="category-title">
+  <h3 class="to-eat">To Eat</h3>
+  <ul id="myUL">
+    <li>Hit the gym</li>
+    <li class="checked">Pay bills</li>
+    <li>Meet George</li>
+    <li>Buy eggs</li>
+    <li>Read a book</li>
+    <li>Organize office</li>
+  </ul>
+</section>
+<br>
+<section class="category-title">
+  <h3 class="to-watch">To Watch</h3>
+  <ul id="myUL">
+    <li>Hit the gym</li>
+    <li class="checked">Pay bills</li>
+    <li>Meet George</li>
+    <li>Buy eggs</li>
+    <li>Read a book</li>
+    <li>Organize office</li>
+  </ul>
+</section>
+<br>
+<section class="category-title">
+  <h3 class="to-buy">To Buy</h3>
+  <ul id="myUL">
+    <li>Hit the gym</li>
+    <li class="checked">Pay bills</li>
+    <li>Meet George</li>
+    <li>Buy eggs</li>
+    <li>Read a book</li>
+    <li>Organize office</li>
+  </ul>
+</section>
+<br>
+<section class="category-title">
+  <h3 class="to-read">To Read</h3>
+  <ul id="myUL">
+    <li>Hit the gym</li>
+    <li class="checked">Pay bills</li>
+    <li>Meet George</li>
+    <li>Buy eggs</li>
+    <li>Read a book</li>
+    <li>Organize office</li>
+  </ul>
+</section>
 
 
 
-
+</div>
   <script>
-    if ('geolocation' in navigator) {
-      console.log('geolocation available');
-      navigator.geolocation.getCurrentPosition(position => {
-        console.log(position);
-      });
-    } else {
-      console.log('geolocation not available');
-    }
-  </script>
-</body>
+  // Create a "close" button and append it to each list item
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
 
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function(ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+
+  // Create a new list item when clicking on the "Add" button
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+
+  </script>
+
+  </body>
 </html>
