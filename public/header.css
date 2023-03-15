@@ -36,22 +36,42 @@ section.category-title {
   color: #ffb3ba;
   margin-left: 20px;
   font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
+}
+
+.arrow {
+  font-size: 60px;
 }
 
 .to-watch {
   color: #ffdfba;
   margin-left: 20px;
   font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
 }
 .to-buy {
   color: #baffc9;
   margin-left: 20px;
   font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
 }
 .to-read {
   color: #bae1ff;
   margin-left: 20px;
   font-size: 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 30px;
 }
 
 

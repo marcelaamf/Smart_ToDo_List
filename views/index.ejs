@@ -4,9 +4,9 @@
 <head>
   <title>Main Page</title>
 
-  <meta charset="UTF-8" >
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Header CSS -->
   <link rel="stylesheet" href="/header.css" type="text/css" />
@@ -22,134 +22,175 @@
 
 <body>
   <div class="main">
-  <!-- Side navigation -->
-<div class="sidenav">
-  <img class="logo" src="smarttodologo.png">
-  <a class="eat" href="#">To Eat</a>
-  <a class="watch" href="#">To Watch</a>
-  <a class="buy" href="#">To Buy</a>
-  <a class="read" href="#">To Read</a>
-</div>
+    <!-- Side navigation -->
+    <div class="sidenav">
+      <img class="logo" src="smarttodologo.png">
+      <a class="eat" href="#">To Eat</a>
+      <a class="watch" href="#">To Watch</a>
+      <a class="buy" href="#">To Buy</a>
+      <a class="read" href="#">To Read</a>
+    </div>
 
-<!-- Page content -->
-
-
+    <!-- Page content -->
 
 
-  <div id="myDIV" class="header">
-    <h2 style="margin:5px">My To Do List</h2>
-    <input type="text" id="myInput" placeholder="Title...">
-    <span onclick="newElement()" class="addBtn">Add</span>
+
+
+    <div id="myDIV" class="header">
+      <h2 style="margin:5px">My To Do List</h2>
+      <input type="text" id="myInput" placeholder="Title...">
+      <span onclick="newElement()" class="addBtn">Add</span>
+    </div>
+
+    <section class="category-title">
+      <div class="collapsible to-eat">
+        <h3>To Eat</h3><span class="arrow">&#x1F83B</span>
+      </div>
+      <div class="content">
+        <ul id="myUL">
+          <li>Hit the gym</li>
+          <li class="checked">Pay bills</li>
+          <li>Meet George</li>
+          <li>Buy eggs</li>
+          <li>Read a book</li>
+          <li>Organize office</li>
+        </ul>
+      </div>
+    </section>
+
+    <br>
+
+    <section class="category-title">
+      <div class="collapsible to-watch">
+        <h3>To Watch</h3><span class="arrow">&#x1F83B</span>
+      </div>
+      <div class="content">
+        <ul id="myUL">
+          <li>Hit the gym</li>
+          <li class="checked">Pay bills</li>
+          <li>Meet George</li>
+          <li>Buy eggs</li>
+          <li>Read a book</li>
+          <li>Organize office</li>
+        </ul>
+      </div>
+    </section>
+
+    <br>
+
+    <section class="category-title">
+      <div class="collapsible to-buy">
+        <h3>To Buy</h3><span class="arrow">&#x1F83B</span>
+      </div>
+      <div class="content">
+        <ul id="myUL">
+          <li>Hit the gym</li>
+          <li class="checked">Pay bills</li>
+          <li>Meet George</li>
+          <li>Buy eggs</li>
+          <li>Read a book</li>
+          <li>Organize office</li>
+        </ul>
+      </div>
+    </section>
+
+    <br>
+
+    <section class="category-title">
+      <div class="collapsible to-read">
+        <h3>To Read</h3><span class="arrow">&#x1F83B</span>
+      </div>
+      <div class="content">
+        <ul id="myUL">
+          <li>Hit the gym</li>
+          <li class="checked">Pay bills</li>
+          <li>Meet George</li>
+          <li>Buy eggs</li>
+          <li>Read a book</li>
+          <li>Organize office</li>
+        </ul>
+      </div>
+    </section>
+
+
+
   </div>
-<section class="category-title">
-  <h3 class="to-eat">To Eat</h3>
-  <ul id="myUL">
-    <li>Hit the gym</li>
-    <li class="checked">Pay bills</li>
-    <li>Meet George</li>
-    <li>Buy eggs</li>
-    <li>Read a book</li>
-    <li>Organize office</li>
-  </ul>
-</section>
-<br>
-<section class="category-title">
-  <h3 class="to-watch">To Watch</h3>
-  <ul id="myUL">
-    <li>Hit the gym</li>
-    <li class="checked">Pay bills</li>
-    <li>Meet George</li>
-    <li>Buy eggs</li>
-    <li>Read a book</li>
-    <li>Organize office</li>
-  </ul>
-</section>
-<br>
-<section class="category-title">
-  <h3 class="to-buy">To Buy</h3>
-  <ul id="myUL">
-    <li>Hit the gym</li>
-    <li class="checked">Pay bills</li>
-    <li>Meet George</li>
-    <li>Buy eggs</li>
-    <li>Read a book</li>
-    <li>Organize office</li>
-  </ul>
-</section>
-<br>
-<section class="category-title">
-  <h3 class="to-read">To Read</h3>
-  <ul id="myUL">
-    <li>Hit the gym</li>
-    <li class="checked">Pay bills</li>
-    <li>Meet George</li>
-    <li>Buy eggs</li>
-    <li>Read a book</li>
-    <li>Organize office</li>
-  </ul>
-</section>
-
-
-
-</div>
   <script>
-  // Create a "close" button and append it to each list item
-  var myNodelist = document.getElementsByTagName("LI");
-  var i;
-  for (i = 0; i < myNodelist.length; i++) {
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    myNodelist[i].appendChild(span);
-  }
 
-  // Click on a close button to hide the current list item
-  var close = document.getElementsByClassName("close");
-  var i;
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+      coll[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
     }
-  }
 
-  // Add a "checked" symbol when clicking on a list item
-  var list = document.querySelector('ul');
-  list.addEventListener('click', function(ev) {
-    if (ev.target.tagName === 'LI') {
-      ev.target.classList.toggle('checked');
+
+    // Create a "close" button and append it to each list item
+    var myNodelist = document.getElementsByTagName("LI");
+    var i;
+    for (i = 0; i < myNodelist.length; i++) {
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      myNodelist[i].appendChild(span);
     }
-  }, false);
 
-  // Create a new list item when clicking on the "Add" button
-  function newElement() {
-    var li = document.createElement("li");
-    var inputValue = document.getElementById("myInput").value;
-    var t = document.createTextNode(inputValue);
-    li.appendChild(t);
-    if (inputValue === '') {
-      alert("You must write something!");
-    } else {
-      document.getElementById("myUL").appendChild(li);
-    }
-    document.getElementById("myInput").value = "";
-
-    var span = document.createElement("SPAN");
-    var txt = document.createTextNode("\u00D7");
-    span.className = "close";
-    span.appendChild(txt);
-    li.appendChild(span);
-
+    // Click on a close button to hide the current list item
+    var close = document.getElementsByClassName("close");
+    var i;
     for (i = 0; i < close.length; i++) {
-      close[i].onclick = function() {
+      close[i].onclick = function () {
         var div = this.parentElement;
         div.style.display = "none";
       }
     }
-  }
+
+    // Add a "checked" symbol when clicking on a list item
+    var list = document.querySelector('ul');
+    list.addEventListener('click', function (ev) {
+      if (ev.target.tagName === 'LI') {
+        ev.target.classList.toggle('checked');
+      }
+    }, false);
+
+    // Create a new list item when clicking on the "Add" button
+    function newElement() {
+      var li = document.createElement("li");
+      var inputValue = document.getElementById("myInput").value;
+      var t = document.createTextNode(inputValue);
+      li.appendChild(t);
+      if (inputValue === '') {
+        alert("You must write something!");
+      } else {
+        document.getElementById("myUL").appendChild(li);
+      }
+      document.getElementById("myInput").value = "";
+
+      var span = document.createElement("SPAN");
+      var txt = document.createTextNode("\u00D7");
+      span.className = "close";
+      span.appendChild(txt);
+      li.appendChild(span);
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.display = "none";
+        }
+      }
+    }
 
   </script>
 
-  </body>
+</body>
+
 </html>
