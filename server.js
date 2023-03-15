@@ -76,6 +76,8 @@ app.post("/logout", (req, res) => {
   res.redirect("/");
 });
 
+
+
 /*// /user/endpoints
 const mainRouter = express.Router();
 mainRoutes(mainRouter, db);*/

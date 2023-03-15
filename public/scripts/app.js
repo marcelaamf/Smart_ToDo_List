@@ -28,19 +28,17 @@ $(document).ready(function () {
   $(".to-eat-form").on("submit", function (event) {
     event.preventDefault();
     // console.log('food', event.target.toDoItem.value)
-      $.ajax({
+    $.ajax({
       method: 'POST',
-      url: '/mainpage',
+      url: '/',
       data: $(this).serialize(),
       success: function (data) {
-
         $('.new-items').prepend(createItem(event.target.toDoItem.value));      },
       error: function (xhr, status, error) {
         console.error('Error:', error);
       }
     });
-    })
-
+  })
 
 
 });
