@@ -7,7 +7,7 @@ const addItem = function(usersid, item , categoryid) {
   	RETURNING *;`;
   const values = [usersid, item, categoryid];
   return db.query(query, values)
-    .then(res => res.rows[0])
+    .then(res => res.rows)
     .catch(err => {
       console.error('query error', err.stack);
     });

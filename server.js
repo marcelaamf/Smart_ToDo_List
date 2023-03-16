@@ -11,6 +11,10 @@ const db = require('./db/connection.js');
 
 
 
+const axios = require('axios')
+
+
+
 
 const PORT = process.env.PORT || 8080;
 const app = express();
@@ -46,6 +50,7 @@ const userApiRoutes = require('./routes/users-api');
 const widgetApiRoutes = require('./routes/widgets-api');
 const usersRoutes = require('./routes/users');
 const mainRoutes = require('./routes/mainpage');
+const search = require('./routes/search')
 
 
 // Mount all resource routes
@@ -54,6 +59,14 @@ const mainRoutes = require('./routes/mainpage');
 app.use('/api/users', userApiRoutes);
 app.use('/api/widgets', widgetApiRoutes);
 app.use('/users', usersRoutes);
+app.use('/mainpage', mainRoutes);
+app.use('/search', search);
+
+// index page
+app.get('/', (req, res) => {
+  return res.render('index');
+});
+
 // Note: mount other resources here, using the same pattern above
 
 //app.use('/mainpage', mainRoutes);
@@ -62,10 +75,7 @@ app.use('/users', usersRoutes);
 // Warning: avoid creating more routes in this file!
 // Separate them into separate routes files (see above).
 
-app.get('/', (req, res) => {
 
-  res.render('index');
-});
 
 // user login
 app.get('/login/:id', (req, res) => {
@@ -79,15 +89,11 @@ app.post("/logout", (req, res) => {
   res.redirect("/");
 });
 
-
-
-/*// /user/endpoints
-const mainRouter = express.Router();
-mainRoutes(mainRouter, db);*/
-app.use('/mainpage', mainRoutes(db));
-
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
+
+
+
 
 
