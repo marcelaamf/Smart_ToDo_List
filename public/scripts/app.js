@@ -14,6 +14,14 @@ $(document).ready(function () {
 
 
 
+
+
+
+
+
+
+
+
   // Create a new list item when clicking on the "Add" button(new code)
   /* function newElement() {
     const escapeText = function (str) {
@@ -78,6 +86,7 @@ $(document).ready(function () {
       url: '/mainpage',
       data: {"title": value},
       success: function (data) {
+
         $('#myUL').prepend($("<li></li>").text(value));
         $("#myInput").val('');
 
