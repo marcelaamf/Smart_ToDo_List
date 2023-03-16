@@ -2,7 +2,7 @@
 $(document).ready(function () {
   console.log('Client ready!');
 
-  const createItem = function (item) {
+  /* const createItem = function (item) {
     const escapeText = function (str) {
       let div = document.createElement('div');
       div.appendChild(document.createTextNode(str));
@@ -10,21 +10,20 @@ $(document).ready(function () {
     };
 
     console.log('item', item)
+ */
 
 
 
-
-    // Create a new list item when clicking on the "Add" button(new code)
-    function newElement(item) {
-      console.log(item);
-      const escapeText = function (str) {
+  // Create a new list item when clicking on the "Add" button(new code)
+  /* function newElement() {
+    const escapeText = function (str) {
 
 
-        var li = document.createElement("li");
-        var inputValue = document.getElementById("myInput").value;
-        var t = document.createTextNode(inputValue);
-        return li.innerHTML;
-      }
+      var li = document.createElement("li");
+
+      var t = document.createTextNode(inputValue);
+      //return li.innerHTML;
+
       li.appendChild(t);
       if (inputValue === '') {
         alert("You must write something!");
@@ -46,6 +45,7 @@ $(document).ready(function () {
         }
       }
     }
+  } */
 
 
 
@@ -54,30 +54,33 @@ $(document).ready(function () {
 
 
 
-    //our original code
-    let $itemMsg =
-      `<article class="items-container">
-        <header>
-        </header>
-          <p class="items-texts">${escapeText(item)}</p>
-        <footer>
-        </footer>
-      </article>`
-      ;
-    console.log('itemMsg', $itemMsg)
-    return $itemMsg;
-  };
-
-
-  $(".to-eat-form").on("submit", function (event) {
+  //our original code
+  /* let $itemMsg =
+    `<article class="items-container">
+      <header>
+      </header>
+        <p class="items-texts">${escapeText(item)}</p>
+      <footer>
+      </footer>
+    </article>`
+    ;
+  console.log('itemMsg', $itemMsg)
+  return $itemMsg;
+};
+*/
+//var inputValue = document.getElementById("myInput").value;
+  $(".addBtn").on("click", function (event) {
     event.preventDefault();
-    // console.log('food', event.target.toDoItem.value)
+    const value = $("#myInput").val();
+    console.log(value);
     $.ajax({
       method: 'POST',
       url: '/mainpage',
-      data: $(this).serialize(),
+      data: {"title": value},
       success: function (data) {
-        $('.new-items').prepend(createItem(event.target.myInput.value));
+        $('#myUL').prepend($("<li></li>").text(value));
+        $("#myInput").val('');
+
       },
       error: function (xhr, status, error) {
         console.error('Error:', error);
