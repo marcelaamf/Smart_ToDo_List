@@ -10,7 +10,8 @@ const bodyParser = require("body-parser");
 const db = require('./db/connection.js');
 //const WolframAlphaAPI = require('wolfram-alpha-api');
 //const waApi = WolframAlphaAPI('VWQ6YV-LL399286H2');
-const axios = require('axios')
+const axios = require('axios');
+//const API = require('./api/api');
 
 
 
@@ -102,6 +103,8 @@ app.post("/logout", (req, res) => {
   res.clearCookie('session');
   res.redirect("/");
 });
+
+
 
 
 
