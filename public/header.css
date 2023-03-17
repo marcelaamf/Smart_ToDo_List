@@ -204,3 +204,9 @@ li
   height: 40px;
   margin: 5px;
  }
+
+ .login {
+color: gray;
+font-family: sans-serif;
+margin: 10px;
+}

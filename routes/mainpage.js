@@ -7,6 +7,7 @@ const helperFunction = require('../db/queries/helperFunction.js');
 const updateItem = require('../db/queries/update');
 const deleteItem = require('../db/queries/delete');
 const insertItem = require('../db/queries/insert');
+const axios = require('axios');
 
 //get category
 router.get('/:id', (req, res) => {
@@ -38,44 +39,38 @@ router.patch('/', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
-  deleteItem(req.params.id)
-    .then((data) => {
-      console.log('data');
-      res.send({ data })
-    });
-});
-
-
-
-module.exports = router;
-
-
-
-//get item
-// router.get('/', (req, res) => {
-
-//   const addItem = addItem()
+// router.delete('delete/:id', (req, res) => {
+//   deleteItem(req.params.id)
 //     .then((data) => {
-//       console.log("data:",data);
-//       const templateVars = { user_id:1,
-//       item: item };
-//       console.log('templateVars', templateVars);
-//       res.render('index', templateVars);
+//       console.log('data');
+//       res.send({ data })
 //     });
+// });
+
+// router.delete('/movies/:title', (req, res) => {
+//   const title = req.params.title;
+//   // Code to delete the movie with the given title from your data store
+//   // ...
+//   res.sendStatus(204); // Send a 204 No Content response to indicate success
 // });
 
 
 
+// router.delete('/delete/:id', (req, res) => {
+//   const id = req.params.id;
+//   // Call function to delete item from database using id
+//   deleteItem(id)
+//     .then(response => {
+//       // handle success response from server
+//       res.status(204).send(); // Return a 204 No Content status code to indicate successful deletion
+//     })
+//     .catch(error => {
+//       // handle error response from server
+//       console.log(error);
+//       res.status(500).send(); // Return a 500 Internal Server Error status code to indicate error
+//     });
+// });
+
+module.exports = router;
 
 
-//get client search
-/* router.get('/', (req, res) => {
-  console.log('test');
-  const clientSearch = clientSearch()
-    .then((data) => {
-      const templateVars = { clientSearch: data }
-      console.log('templateVars', templateVars);
-      res.render('index', templateVars);
-    });
-}); */

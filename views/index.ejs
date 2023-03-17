@@ -28,6 +28,8 @@
         <a class="watch" href="#watch">To Watch</a>
         <a class="buy" href="#buy">To Buy</a>
         <a class="read" href="#read">To Read</a>
+        <br>
+        <div class=" login"> <span> ☺ </span> Logged in as Alice</div>
       </div>
 
       <!-- Page content -->
@@ -48,9 +50,9 @@
             <li class="li-delete">
               Olive Garden
               <div>
-
                 <button class="editBtn">Edit</button>
                 <button class="deleteBtn">Delete</button>
+
               </div>
             </li>
             <li>
@@ -58,6 +60,7 @@
               <div>
                 <button class="editBtn">Edit</button>
                 <button class="deleteBtn">Delete</button>
+
               </div>
             </li>
             <li>
@@ -121,7 +124,7 @@
         </div>
         <div class="content">
           <ul id="myUL-buy">
-            <li>
+            <li class = "checked">
               Eliptical Machine
               <div>
                 <button class="editBtn">Edit</button>
@@ -175,7 +178,7 @@
     </div>
     <script>
 
-    /* var coll = document.getElementsByClassName("collapsible");
+    var coll = document.getElementsByClassName("collapsible");
     var i;
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function () {
@@ -192,14 +195,17 @@
     var myNodelist = document.getElementsByTagName("LI");
     var i;
     for (i = 0; i < myNodelist.length; i++) {
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
+      const span = document.createElement("SPAN");
+      const txt = document.createElement("BUTTON");
+      const name = document.createTextNode("Delete");
+      txt.className = "deleteBtn";
+      txt.appendChild(name);
       span.className = "close";
       span.appendChild(txt);
       myNodelist[i].appendChild(span);
     }
     // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("li-delete");
+    var close = document.getElementsByClassName("close");
     var i;
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function () {
@@ -213,7 +219,7 @@
       if (ev.target.tagName === 'LI') {
         ev.target.classList.toggle('checked');
       }
-    }, false); */
+    }, false);
 
 
     </script>
