@@ -25,6 +25,8 @@
     "pg": "^8.10.0",
     "postgres": "^3.3.4",
     "sass": "^1.35.1",
+    "wajs": "^0.0.17",
+    "wolfram-alpha-api": "^0.2.1",
     "yelp-api": "^1.0.3",
     "yelp-fusion": "^3.0.0"
   },

@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const { yelpSearch } = require('../api/yelp');
+const addItem = require('../db/queries/helperFunction');
 
 //get category
 router.get('/', (req, res) => {
@@ -16,5 +17,14 @@ router.get('/', (req, res) => {
 
     return res.status(400).send('No params provided')
 });
+
+router.post('/', (req, res) => {
+  const userId = 1;
+  const item = req.body.item;
+  const category = req.body.category;
+  addItem(userId, item, category)
+  .then(() => res.send('ok'))
+});
+
 
 module.exports = router

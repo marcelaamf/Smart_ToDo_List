@@ -8,9 +8,8 @@ const morgan = require('morgan');
 const cookieSession = require("cookie-session");
 const bodyParser = require("body-parser");
 const db = require('./db/connection.js');
-
-
-
+//const WolframAlphaAPI = require('wolfram-alpha-api');
+//const waApi = WolframAlphaAPI('VWQ6YV-LL399286H2');
 const axios = require('axios')
 
 
@@ -67,6 +66,21 @@ app.get('/', (req, res) => {
   return res.render('index');
 });
 
+app.get("/movie", function (req, res) {
+  request("https://www.omdbapi.com/?s=star+wars&apikey=key",
+    function (error, response, body) {
+      // Setup an if statement to catch any errors
+      if (!error && response.statusCode == 200) {
+        // For now just print the body of the returned JSON
+        res.send(body);
+      }
+    });
+});
+
+app.get("*", function (request, response) {
+  response.render("error");
+});
+
 // Note: mount other resources here, using the same pattern above
 
 //app.use('/mainpage', mainRoutes);
@@ -88,6 +102,8 @@ app.post("/logout", (req, res) => {
   res.clearCookie('session');
   res.redirect("/");
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
