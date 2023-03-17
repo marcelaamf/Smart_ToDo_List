@@ -178,8 +178,29 @@ input {
   cursor: pointer;
   transition: 0.3s;
   border-radius: 0px 10px 10px 0px;
+  border-style: none;
+
 }
 
 .addBtn:hover {
   background-color: #bbb;
 }
+
+li
+ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+
+ .editBtn{
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+ }
+
+ .deleteBtn{
+  width: 100px;
+  height: 40px;
+  margin: 5px;
+ }
