@@ -1,128 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Main Page</title>
 
-<head>
-  <title>Main Page</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Header CSS -->
+    <link rel="stylesheet" href="/header.css" type="text/css" />
+    <!-- Navbar CSS -->
+    <link rel="stylesheet" href="/navbar.css" type="text/css" />
 
-  <!-- Header CSS -->
-  <link rel="stylesheet" href="/header.css" type="text/css" />
-  <!-- Navbar CSS -->
-  <link rel="stylesheet" href="/navbar.css" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
+    <script src="/vendor/jquery-3.0.0.js"></script>
+    <script defer src="/scripts/app.js"></script>
+  </head>
 
-  <script src="/vendor/jquery-3.0.0.js"></script>
-  <script defer src="/scripts/app.js"></script>
-</head>
+  <body>
+    <div class="main">
+      <!-- Side navigation -->
+      <div class="sidenav">
+      <a href="#myDIV"><img class="logo" src="smarttodologo.png"/></a>
+        <a class="eat" href="#eat">To Eat</a>
+        <a class="watch" href="#watch">To Watch</a>
+        <a class="buy" href="#buy">To Buy</a>
+        <a class="read" href="#read">To Read</a>
+      </div>
 
-<body>
-  <div class="main">
-    <!-- Side navigation -->
-    <div class="sidenav">
-      <img class="logo" src="smarttodologo.png">
-      <a class="eat" href="#">To Eat</a>
-      <a class="watch" href="#">To Watch</a>
-      <a class="buy" href="#">To Buy</a>
-      <a class="read" href="#">To Read</a>
+      <!-- Page content -->
+
+      <div id="myDIV" class="header">
+        <h2 style="margin: 5px">My To Do List</h2>
+        <input type="text" id="myInput" placeholder="Title..." />
+        <button class="addBtn">Add</button>
+      </div>
+
+      <section class="category-title">
+        <div id="eat" class="collapsible to-eat">
+          <h3 >To Eat</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="content">
+          <ul id="myUL-eat">
+            <li class="li-delete">
+              Olive Garden
+              <div>
+
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              Red Lobster
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              The Keg
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              Buy eggs
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <br />
+
+      <section class="category-title">
+        <div id="watch" class="collapsible to-watch">
+          <h3>To Watch</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="content">
+          <ul id="myUL-watch">
+            <li>
+              Game of Thrones
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              Pulp Fiction
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              Titanic
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <br />
+
+      <section class="category-title">
+        <div id="buy" class="collapsible to-buy">
+          <h3>To Buy</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="content">
+          <ul id="myUL-buy">
+            <li>
+              Eliptical Machine
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              Rolex
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <br />
+
+      <section class="category-title">
+        <div id="read" class="collapsible to-read">
+          <h3>To Read</h3>
+          <span class="arrow">▼</span>
+        </div>
+        <div class="content">
+          <ul id="myUL-read">
+            <li>
+              The Da Vinci Code
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              The Lost Symbol
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+            <li>
+              Eclipse
+              <div>
+                <button class="editBtn">Edit</button>
+                <button class="deleteBtn">Delete</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
+    <script>
 
-    <!-- Page content -->
-
-
-
-
-
-    <div id="myDIV" class="header">
-      <h2 style="margin:5px">My To Do List</h2>
-      <input type="text" id="myInput" placeholder="Title...">
-      <button class="addBtn">Add</button>
-    </div>
-
-    <section class="category-title">
-      <div class="collapsible to-eat">
-        <h3>To Eat</h3><span class="arrow">▼</span>
-      </div>
-      <div class="content">
-        <ul id="myUL-eat">
-          <li>Hit the gym</li>
-          <li class="checked">Pay bills</li>
-          <li>Meet George</li>
-          <li>Buy eggs</li>
-          <li>Read a book</li>
-          <li>Organize office</li>
-        </ul>
-      </div>
-    </section>
-
-    <br>
-
-
-    <section class="category-title">
-
-      <div class="collapsible to-watch">
-        <h3>To Watch</h3><span class="arrow">▼</span>
-      </div>
-      <div class="content">
-        <ul id="myUL-watch">
-          <li>Hit the gym</li>
-          <li class="checked">Pay bills</li>
-          <li>Meet George</li>
-          <li>Buy eggs</li>
-          <li>Read a book</li>
-          <li>Organize office</li>
-        </ul>
-      </div>
-    </section>
-
-    <br>
-
-    <section class="category-title">
-      <div class="collapsible to-buy">
-        <h3>To Buy</h3><span class="arrow">▼</span>
-      </div>
-      <div class="content">
-        <ul id="myUL-buy">
-          <li>Hit the gym</li>
-          <li class="checked">Pay bills</li>
-          <li>Meet George</li>
-          <li>Buy eggs</li>
-          <li>Read a book</li>
-          <li>Organize office</li>
-        </ul>
-      </div>
-    </section>
-
-    <br>
-
-    <section class="category-title">
-      <div class="collapsible to-read">
-        <h3>To Read</h3><span class="arrow">▼</span>
-      </div>
-      <div class="content">
-        <ul id="myUL-read">
-          <li>Hit the gym</li>
-          <li class="checked">Pay bills</li>
-          <li>Meet George</li>
-          <li>Buy eggs</li>
-          <li>Read a book</li>
-          <li>Organize office</li>
-        </ul>
-      </div>
-    </section>
-
-
-
-  </div>
-  <script>
-
-    var coll = document.getElementsByClassName("collapsible");
+    /* var coll = document.getElementsByClassName("collapsible");
     var i;
-
     for (i = 0; i < coll.length; i++) {
       coll[i].addEventListener("click", function () {
         this.classList.toggle("active");
@@ -134,8 +188,6 @@
         }
       });
     }
-
-
     // Create a "close" button and append it to each list item
     var myNodelist = document.getElementsByTagName("LI");
     var i;
@@ -146,9 +198,8 @@
       span.appendChild(txt);
       myNodelist[i].appendChild(span);
     }
-
     // Click on a close button to hide the current list item
-    var close = document.getElementsByClassName("close");
+    var close = document.getElementsByClassName("li-delete");
     var i;
     for (i = 0; i < close.length; i++) {
       close[i].onclick = function () {
@@ -156,48 +207,15 @@
         div.style.display = "none";
       }
     }
-
     // Add a "checked" symbol when clicking on a list item
     var list = document.querySelector('ul');
     list.addEventListener('click', function (ev) {
       if (ev.target.tagName === 'LI') {
         ev.target.classList.toggle('checked');
       }
-    }, false);
-
-    // Create a new list item when clicking on the "Add" button
-
-    /* function newElement() {
-
-      var li = document.createElement("li");
-      var inputValue = document.getElementById("myInput").value;
-      var t = document.createTextNode(inputValue);
-      li.appendChild(t);
-      if (inputValue === '') {
-        alert("You must write something!");
-      } else {
-        document.getElementById("myUL").appendChild(li);
-      }
-      document.getElementById("myInput").value = "";
-
-      var span = document.createElement("SPAN");
-      var txt = document.createTextNode("\u00D7");
-      span.className = "close";
-      span.appendChild(txt);
-      li.appendChild(span);
-
-      for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-          var div = this.parentElement;
-          div.style.display = "none";
-        }
-      }
-
-    } */
+    }, false); */
 
 
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>

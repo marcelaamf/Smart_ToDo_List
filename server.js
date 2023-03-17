@@ -12,7 +12,8 @@ const db = require('./db/connection.js');
 //const waApi = WolframAlphaAPI('VWQ6YV-LL399286H2');
 const axios = require('axios');
 //const API = require('./api/api');
-
+const ENV = process.env.ENV
+const request = require('request');
 
 
 
@@ -103,9 +104,6 @@ app.post("/logout", (req, res) => {
   res.clearCookie('session');
   res.redirect("/");
 });
-
-
-
 
 
 app.listen(PORT, () => {

@@ -4,6 +4,9 @@ const getCategories = require('../db/queries/categories');
 const clientSearch = require('../db/queries/getItems.js');
 const addItem = require('../db/queries/helperFunction.js');
 const helperFunction = require('../db/queries/helperFunction.js');
+const updateItem = require('../db/queries/update');
+const deleteItem = require('../db/queries/delete');
+const insertItem = require('../db/queries/insert');
 
 //get category
 router.get('/:id', (req, res) => {
@@ -26,6 +29,24 @@ router.post('/', (req, res) => {
     });
   res.send('this page is working');
 });
+
+router.patch('/', (req, res) => {
+  updateItem(req.params.id)
+    .then((data) => {
+      console.log('data');
+      res.send({ data })
+    });
+});
+
+router.delete('/:id', (req, res) => {
+  deleteItem(req.params.id)
+    .then((data) => {
+      console.log('data');
+      res.send({ data })
+    });
+});
+
+
 
 module.exports = router;
 
